@@ -41,3 +41,14 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*.i
+*.o
+*.d
+*.s
+*.disasm
+*.elf
+*.hex
+*.map
+*.zargo
+*.zargo~
