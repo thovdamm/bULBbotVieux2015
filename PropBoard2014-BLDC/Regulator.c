@@ -10,7 +10,7 @@
 #define MAXR				100E-3
 #define KV_T			 	1		// gain du r»gulateur de vitesse lin»aire=> terme d»riv» en l
 #define KV_R				50E-3	// gain du r»gulateur de vitesse angulaire=> terme d»riv» en r
-#define KP_T				25		// gain du r»gulateur de position longitudinal=> terme proportionnel en l
+#define KP_T				12		// gain du r»gulateur de position longitudinal=> terme proportionnel en l
 #define KP_R				2.8		// gain du r»gulateur de position transversal=> terme proportionnel en r
 #define DC_MAX_DELTA		0.1		// variation maximale du rapport cyclique des moteurs pour une p»riode
 

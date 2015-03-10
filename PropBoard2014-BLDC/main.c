@@ -121,9 +121,9 @@ int main(void) {
 	TRISCbits.TRISC5 = 0;   // configure les pins de debug en sortie
 	TRISBbits.TRISB5 = 0;
 	nomVel.l = 1;		// m/s
-	nomVel.r = 80;		// rad/s
+	nomVel.r = PI/2;	// rad/s
 	nomAcc.l = 1;		// m/s^2
-	nomAcc.r = 80;		// rad/s^2
+	nomAcc.r = PI/2;	// rad/s^2
 	obstacle.status = OBSTACLE_AUCUN;
 	obstacle.x = 0;
 	obstacle.y = 0;

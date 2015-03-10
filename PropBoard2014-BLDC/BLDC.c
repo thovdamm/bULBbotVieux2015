@@ -11,30 +11,30 @@
 #define PWM_MAX		399	//(PWM_PERIOD*99)/100
 
 // Pattes du driver moteurs
-#define PWM_RA				P1DC1				// PWM1L1/RP15/RB15
-#define PWM_RB				P1DC2				// AN6/RP16/RC0
-#define PWM_RC				OC2RS				// RP4/RB4
-#define PWM_LA				OC3RS				// RP24/RC8
-#define PWM_LB				OC4RS				// RP25/RC9
-#define PWM_LC				OC1RS //P1DC2				// PWM1H2/RP12/RB12
-#define RST_RBn				LATAbits.LATA7		// AN8/RP18/RC2
-#define RST_RBn_TRIS		TRISAbits.TRISA7
-#define RST_RAn				LATBbits.LATB15		// AN4/RP2/RB2
+#define PWM_RA			P1DC1
+#define PWM_RB			P1DC2
+#define PWM_RC			OC2RS
+#define PWM_LA			OC3RS
+#define PWM_LB			OC4RS
+#define PWM_LC			OC1RS
+#define RST_RAn			LATBbits.LATB15
 #define RST_RAn_TRIS		TRISBbits.TRISB15
-#define RST_RCn				LATAbits.LATA10		// AN1/RA1
+#define RST_RBn			LATAbits.LATA7
+#define RST_RBn_TRIS		TRISAbits.TRISA7
+#define RST_RCn			LATAbits.LATA10
 #define RST_RCn_TRIS		TRISAbits.TRISA10
-#define RST_LAn				LATAbits.LATA8		// AN5/RP3/RB3
+#define RST_LAn			LATAbits.LATA8
 #define RST_LAn_TRIS		TRISAbits.TRISA8
-#define RST_LBn				LATCbits.LATC1		// RA7
+#define RST_LBn			LATCbits.LATC1
 #define RST_LBn_TRIS		TRISCbits.TRISC1
-#define RST_LCn				LATBbits.LATB3		// RA10
+#define RST_LCn			LATBbits.LATB3
 #define RST_LCn_TRIS		TRISBbits.TRISB3
-#define HALL_RA				PORTCbits.RC7
-#define HALL_RB				PORTCbits.RC8
-#define HALL_RC				PORTCbits.RC9
-#define HALL_LA				PORTBbits.RB8
-#define HALL_LB				PORTBbits.RB9
-#define HALL_LC				PORTCbits.RC6
+#define HALL_RA			PORTCbits.RC7
+#define HALL_RB			PORTCbits.RC8
+#define HALL_RC			PORTCbits.RC9
+#define HALL_LA			PORTBbits.RB8
+#define HALL_LB			PORTBbits.RB9
+#define HALL_LC			PORTCbits.RC6
 
 
 int hallValueR, hallValueL;
@@ -118,10 +118,10 @@ void _ISR _CNInterrupt(void) {
 
 void motorsInit(void) {
 	// assignation des I/Os des PWMs
-	RPOR1bits.RP2R = 18;	// OC1 -> RP16	(PWM_LC)
-	RPOR6bits.RP12R = 19;	// OC2 -> RP4	(PPWM_RC)
-	RPOR9bits.RP18R = 20;	// OC3 -> RP24	(PWM_LA)
-	RPOR8bits.RP16R = 21;	// OC4 -> RP25	(PWM_LB)
+	RPOR1bits.RP2R = 18;	// OC1 -> RP2	(PWM_RC)
+	RPOR6bits.RP12R = 19;	// OC2 -> RP12	(PWM_LC)
+	RPOR9bits.RP18R = 20;	// OC3 -> RP18	(PWM_RA)
+	RPOR8bits.RP16R = 21;	// OC4 -> RP16	(PWM_RB)
 	motorsDisable();			// Initialement, les moteurs sont désactivés
 	// configuration des resets en sortie
 	RST_RAn_TRIS = 0;
@@ -169,7 +169,7 @@ void motorsInit(void) {
     IEC1bits.CNIE = 1; // enable CN interrupt
 	// Lecture de la position initiale du moteur
 	oldHallValueR = HALL_RC*4 + HALL_RB*2 + HALL_RA*1;
-	oldHallValueR = 2;
+	//oldHallValueR = 2;
 	oldHallValueL = HALL_LC*4 + HALL_LB*2 + HALL_LA*1;
 //	oldHallValueL = 2;
 	hallValueR = oldHallValueR;

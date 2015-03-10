@@ -22,11 +22,11 @@ volatile relativeCoord prOdoRelVel, prOdoRelPos;
 
 void odoInit(void) {
 	// assignation des I/Os du QEI1 (encodeur de droite)
-	ppsInConfig(PPS_QEA1, 19);	// RP19 -> QEIA1 (ODO_RA)
-	ppsInConfig(PPS_QEB1, 20);	// RP20 -> QEIB1 (ODO_RB)
+	ppsInConfig(PPS_QEA1, 6);	// RP6 -> QEIA1 (ODO_RA)
+	ppsInConfig(PPS_QEB1, 7);	// RP7 -> QEIB1 (ODO_RB)
 	// assignation des I/Os du QEI2 (encodeur de gauche)
-	ppsInConfig(PPS_QEA2, 6);	// RP6 -> QEIA2  (ODO_LA)
-	ppsInConfig(PPS_QEB2, 7);	// RP7 -> QEIB2  (ODO_LB)
+	ppsInConfig(PPS_QEA2, 19);	// RP19 -> QEIA2  (ODO_LA)
+	ppsInConfig(PPS_QEB2, 20);	// RP20 -> QEIB2  (ODO_LB)
 	prOdoRelVel.l = 0;
 	prOdoRelVel.r = 0;
 	prOdoRelPos.l = 0;
