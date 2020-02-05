@@ -4,11 +4,11 @@
 #include "Regulator.h"
 #include "consigne.h"
 #include "mouvements.h"
-#include "generTraj.h"
+#include "GenerTraj.h"
 #include "canCommand.h"
-#include "../CanLib/CanDspic.h"
-#include "../CanLib/CanNetwork.h"
-#include "../CanLib/CanProp.h"
+#include "../Canlib/CanDspic.h"
+#include "../Canlib/CanNetwork.h"
+#include "../Canlib/CanProp.h"
 #include "../Peripherals/timers.h"
 #include <math.h>
 

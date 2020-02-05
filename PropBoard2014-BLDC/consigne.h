@@ -1,8 +1,7 @@
 #ifndef CONSIGNE_H
 #define	CONSIGNE_H
 
-
-#include "../CanLib/CanProp.h"
+#include "../Canlib/CanProp.h"
 
 	typedef enum {
 		CSG_STANDING = 0,

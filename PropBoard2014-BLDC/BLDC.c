@@ -1,4 +1,4 @@
-#include "configware.h"
+#include "Configware.h"
 #include "BLDC.h"
 #include "../Peripherals/pps.h"
 #include "../Peripherals/pwm.h"
